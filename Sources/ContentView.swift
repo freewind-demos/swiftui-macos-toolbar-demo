@@ -35,5 +35,41 @@ struct ContentView: View {
             Spacer()
         }
         .padding(30)
+        .toolbar {
+            ToolbarItemGroup(placement: .primaryAction) {
+                Button {
+                    selectedColor = .blue
+                    print("新建")
+                } label: {
+                    Image(systemName: "plus")
+                }
+                .help("新建项目")
+
+                Button {
+                    selectedColor = .green
+                    print("保存")
+                } label: {
+                    Image(systemName: "square.and.arrow.down")
+                }
+                .help("保存")
+
+                Button {
+                    selectedColor = .orange
+                    print("设置")
+                } label: {
+                    Image(systemName: "gear")
+                }
+                .help("设置")
+            }
+
+            ToolbarItem(placement: .navigation) {
+                Button {
+                    selectedColor = .purple
+                    print("返回")
+                } label: {
+                    Image(systemName: "chevron.left")
+                }
+            }
+        }
     }
 }
